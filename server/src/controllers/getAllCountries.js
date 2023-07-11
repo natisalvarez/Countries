@@ -1,9 +1,18 @@
-const { Type } = require('../db');
+const { Country, Activity } = require('../db');
 
-// Pokemon.findAll()
-
-const getAllCountries = async () => {
+const getAllCountries = () => {
+    const countries = Country.findAll(
+        {
+            atributes: ['id', 'name', 'flag', 'continent', 'subregion', 'area', 'population'],
+            include: [
+                {
+                    model: Activity,
+                    attributes: ['name'],
+                }
+            ]
+        }
+    )
+    return countries
 };
-
 
 module.exports = getAllCountries;

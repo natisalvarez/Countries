@@ -4,6 +4,6 @@ const { getAllCountriesHandler, getCountryByIdHandler, getCountryByNameHandler }
 
 countriesRoute.get("/", getAllCountriesHandler);
 countriesRoute.get("/:id", getCountryByIdHandler);
-countriesRoute.get("/", getCountryByNameHandler);
+countriesRoute.get("/name", getCountryByNameHandler); // /?name=nombre
 
 module.exports = countriesRoute; 

@@ -1,35 +1,31 @@
-const axios = require ('axios');
+const axios = require('axios');
+const { Country } = require('../db');
 
-const getApi= async () => { 
-  try {
-   const countriesData = await axios.get("http://localhost:5000/countries");
-   const data = countriesData.map(country => ({
-    id: country.cca3, 
-    name: country.name.official, 
-    image: country.flags.svg, 
-    continent: country.region,
-    capital: country.capital,
-    subregion: country.subtegion,
-    area: country.area, 
-    population: country.population
-   }))
-   return data 
-  } catch (error) {
-    return res.status(400).json ({ error: error.message });   
-  }
-};
+const getApi = async () => {
+    const dbCountries = Country.findAll();
+    if (!dbCountries.length) {
+        const url = await axios.get("http://localhost:5000/countries");
+        let urlCleaned = url.data.map((country) => {
+            return {
+                id: country.cca3,
+                name: country.name.common,
+                image: country.flags.svg,
+                continent: country.continents[0],
+                capital: country.capital ? country.capital[0] : "Capital",
+                subregion: country.subregion ? country.subregion : "Subregion",
+                area: country.area,
+                population: country.population
+            };
+        });
 
-const dataBase = async () => {
-    try {
-        const dbCountries = await countriesData ();
-        await Country.bulkCreate(dbCountries);
-        return dbCountries
-    } catch (error) {
-        return res.status(400).json ({ error: error.message })
+        for (let i = 0; i < urlCleaned.length; i++) {
+            await Country.findOrCreate({
+                where: { name: urlCleaned[i].name },
+                defaults: urlCleaned[i],
+            });
+        }
+        console.log("La base de datos ha sido actualizada")
     }
-}
-
-module.exports = {
-    getApi,
-    dataBase
 };
+
+module.exports = getApi;

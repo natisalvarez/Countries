@@ -1,16 +1,21 @@
 const createActivities = require ('../controllers/createActivities');
+const getActivities = require ('../controllers/getActivities')
 
-const getActivitiesHandler = (req, res) => { 
-    
-    res.status(200).json(`activities handler`)
+const getActivitiesHandler = async (req, res) => { 
+    try {
+        const allActivities = await getActivities();
+        res.status(200).json (allActivities)
+        } catch (error) {
+        return res.status(400).json({error: error.message})  
+        }
 };
 
 const postActivitiesHandler = async (req, res) => {   
     try {
-        const {name, dificulty, duration, season} = req.body;
+        const {name, difficulty, duration, season} = req.body;
         const newActivity = await createActivities(
-            name, dificulty, duration, season);
-    res.status(200).json(newActivity)
+            name, difficulty, duration, season);
+    res.status(201).json(newActivity) //el 201 refiere a que se ha creado
     } catch (error) {
         res.status(400).json({error:error.message})
     };

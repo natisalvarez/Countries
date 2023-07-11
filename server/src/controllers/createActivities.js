@@ -1,9 +1,9 @@
 
 const { Activity } = require ('../db'); // el modelo se importa desde DB
 
-const createActivities = async (name, dificulty, duration, season) => {
+const createActivities = async (name, difficulty, duration, season) => {
 const newActivity = await Activity.create({
-    name, dificulty, duration, season
+    name, difficulty, duration, season
 })
 return newActivity
 };
