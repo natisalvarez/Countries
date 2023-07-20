@@ -12,17 +12,16 @@ const Form = () => {
 console.log(countries)
 
   useEffect(() => {
-    //para que los paises esten disponibles antes de seleccionar una actividad
     dispatch(getCountries());
   }, [dispatch]);
 
-// estado inicial del formulario: vacío
+
   const initialFormState = {
     name: "",
     difficulty: "",
     duration: "",
     season: "",
-    countryId: "",
+    countryId: [],
   };
 
 
@@ -34,7 +33,6 @@ console.log(countries)
     const selectedCountry = event.target.value;
     setForm({
       ...form,
-      //guardo una copia de estado del countryId
       countryId: selectedCountry,
     });
   };
@@ -74,7 +72,6 @@ console.log(countries)
 
   const changeHandler = (event) => {
     const property = event.target.name;
-    console.log(event.target)
     const value = event.target.name === "season" ? event.target.value.toLowerCase() : event.target.value;
 
 
@@ -88,6 +85,8 @@ console.log(countries)
   };
 
 
+
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const errors = validation(form);
@@ -96,8 +95,7 @@ console.log(countries)
       return;
     }
     console.log(`se apretó el botón`);
-    dispatch(createActivity(form.name, form.difficulty, form.duration, form.season, form.countryId));
-    // se crea la actividad con lo escrito en el form
+    dispatch(createActivity(form.name, form.difficulty, form.duration, form.season, form.country));
     // Restablecer el formulario después del envío
     resetForm();
   };
@@ -110,26 +108,19 @@ console.log(countries)
         <br />
         <form onSubmit={handleSubmit}>
           <div>
-            <label htmlFor="name"> Activity </label>
-            <select
-            id="name"
-            name="name"
-            value={form.name}
-            onChange={changeHandler}>
-            <option value="" disabled>
-            Select an activity
-            </option>
-            <option value="Swimming">Swimming</option>
-            <option value="Trekking">Trekking</option>
-            <option value="Surfing">Surfing</option>
-            <option value="Skiing">Skiing</option>
-            <option value="Cycling">Cycling</option>
-            <option value="Cycling">Clymbing</option>
-          </select>
+            <label> Activity </label>
+            <input
+              type="text"
+              value={form.name}
+              onChange={changeHandler}
+              name="name"
+            />
             <span className={style.errorMessage}>{errors.name}</span>
           </div>
 
+
           <br />
+
 
           <div>
             <label> Level of difficulty (1 to 5) </label>
@@ -222,52 +213,3 @@ console.log(countries)
 
 
 export default Form;
-
-/*
-{
-  {
-  "name": "Climbing", 
-  "duration": 5,
-  "difficulty": 4,
-  "countryId": "GTM", 
-  "season": "summer"
-}
-
-
-const Form = () => {
-
-    const [form, setForm] = useState({
-        // las propiedades del estado y del form tienen que ser las mismas.
-        name: "",
-        difficulty: "",
-        duration: "",
-        season: "",
-        country: []
-    }) //set form es la función que modifica el estado
-
-    const [errors, setErrors] = useState({
-        name: {},
-        difficulty: {},
-        duration: {},
-        season: {},
-        country: []
-    })
-
-    /* const changeHandler = (event) => {} // esta funcion lee lo que se escribe en el formulario y lo guarda
-    // event tiene una propiedad que nos dice quién dispara el evento: event.target   
-    const property = event.target.name;
-    const value = event.target.value;
-    setForm({
-        ...form,
-        [property]: value}) 
-
-        const changeHandler = (event) => {
-          console.log(event.target)
-          setForm({
-              ...form,
-              [event.target.name]: event.target.value
-              //aca basicamente digo que el event.target.name es igual al input
-          })
-          setErrors()
-      };
-*/

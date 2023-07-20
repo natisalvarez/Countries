@@ -15,22 +15,32 @@ module.exports = (sequelize) => {
     },
     image: {
       type: DataTypes.STRING,
-      defaultValue: '',
+      defaultValue: ''
     },
     continent: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING
     },
     capital: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING
     },
     subregion: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING
     },
     area: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER
     },
     population: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER
     },
   }, { timestamps: false });
 };
+
+/*
+{
+    "name": "Hiking",
+    "difficulty": 4,
+    "duration": 3,
+    "season": "winter",
+    "country": "ARG"
+  }
+*/

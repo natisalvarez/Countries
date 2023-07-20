@@ -1,30 +1,26 @@
-import {useState, useEffect} from 'react';
-import { useDispatch } from 'react-redux';
-import  { onSearch } from '../../Redux/actions';
-import * as actions from '../../Redux/actions'
 
+import style from './SearchBar.module.css';
 
-
-const SearchBar = () => {
-    
-    const dispatch = useDispatch()
-
-    const [name, setName] = useState('')
-
-    const handleChange = (event) => {
-        setName(event.target.value)
-    }
-
-    const handleClick = () =>{ 
-         dispatch(onSearch(name))
-    }
-    return(
-        <div>
-            <input type="search" placeholder='Write the name of a country' onChange={handleChange} value={name}/>
-
-            <button onClick={() =>{handleClick();setName('')}}>Search</button>
-        </div>
-    )
-}
+const SearchBar = ({ searchName, handleChange, handleSubmit }) => {
+  return (
+    <div>
+      <form onSubmit={handleSubmit}>
+        <input
+          className={style.searchBar}
+          type="search"
+          name="search"
+          placeholder="Search..."
+          value={searchName}
+          onChange={handleChange}
+        />
+        <button className={style.button} type="submit">
+          Search
+        </button>
+      </form>
+    </div>
+  );
+};
 
 export default SearchBar;
+
+

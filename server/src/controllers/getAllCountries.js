@@ -5,14 +5,10 @@ const getAllCountries = () => {
         {
             atributes: ['id', 'name', 'flag', 'continent', 'subregion', 'area', 'population'],
             include: [
-                {
-                    model: Activity,
-                    attributes: ['name'],
-                }
-            ]
-        }
-    )
+                {model: Activity, attributes: ['name'], } ]
+        } )
     return countries
 };
 
 module.exports = getAllCountries;
+

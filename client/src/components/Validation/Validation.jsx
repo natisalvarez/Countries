@@ -1,29 +1,31 @@
-import Form from "../../views/Form/Form";
-
 const validation = (form) => {
+
+
     const errors = {};
-  
-    if (form.name === "") {
-      errors.name = "Debes seleccionar una actividad";
+
+    if (!form.name || !/[a-z]+/.test(form.name)) {
+      errors.name = "Activity is required and must be a word";
     }
-  
-    if (!form.difficulty) {
-      errors.difficulty = "Selecciona un grado de dificultad";
+
+    if (!/^[1-5]$/.test(form.difficulty)) {
+      errors.difficulty = "Invalid Number. Please enter a number between 1 and 5.";
     }
-  
-    if (!form.duration) {
-      errors.duration = "Selecciona o ingresa un número";
+
+    if (!/^(1?[0-9]|2[0-4])$/.test(form.duration)) {
+      errors.duration = "Invalid Number. Please enter a number between 1 and 24.";
     }
-  
-    if (!form.season) {
-      errors.season = "Selecciona una temporada";
+
+    if (!["summer", "winter", "autumn", "spring"].includes(form.season)) {
+      errors.season = "Invalid season. Please choose one of: summer, winter, autumn, spring.";
     }
-  
-    if (!form.pais.length) {
-      errors.pais = "Debes seleccionar al menos un (1) país";
+
+    if (form.countryId.length < 1) {
+      errors.countryId = "Debes seleccionar al menos un (1) país";
     }
-  
-    return errors;
+
+    return errors
   };
-  
-  export default validation;
+
+
+
+export default validation; 

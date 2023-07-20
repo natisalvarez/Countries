@@ -1,12 +1,32 @@
 import { Link } from 'react-router-dom';
-import styles from "./Landing.modules.css?inline"
+import style from "./Landing.module.css"
 
 const Landing = () => {
     return (
-        <div>
-        <h1> Hello World! </h1>
-            <Link to="/home" className={styles.button}> HOME </Link>
+        <div className={style.landing}>
+            <div>
+        <h1>  </h1>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+            <Link to="/home" className={style.button}> Let's start! </Link>
         </div>
+        </div>
+        
+       
     )
 };
 

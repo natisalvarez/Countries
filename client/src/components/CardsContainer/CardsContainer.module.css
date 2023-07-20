@@ -1,0 +1,27 @@
+.container{
+    justify-content: center;
+    padding: 10%;
+   
+}
+
+.clearButton{
+    display: flex;
+    text-align: left;
+    padding: 0.5%;
+    margin-top: 0px;
+    background-color: #70A762;
+    border-radius: 10%;
+    color: white;
+}
+
+.cards { /*este hay que modificar si se quieren mover las cards chicas*/
+    display: flex;
+    flex-direction: row;
+    background-color: #70A762;
+    flex-wrap: wrap ;
+    width: 90%;
+    justify-content: center;
+    margin: auto;
+ }
+
+ 
