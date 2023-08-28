@@ -18,7 +18,7 @@ import {
 export const getCountries = () => {
   try {
     return async function (dispatch) { // la action creator tiene que retornar una función que hace la request
-      const apiData = await axios.get("http://localhost:3001/countries");
+      const apiData = await axios.get("/countries");
       const countries = apiData.data;
       console.log(countries)
       dispatch({ type: GET_COUNTRIES, payload: countries });
@@ -34,7 +34,7 @@ export const getCountries = () => {
 export const getCountryByName = (name) => {
   return async function (dispatch) {
     try {
-      const response = await axios(`http://localhost:3001/countries/?name=${name}`);
+      const response = await axios(`/countries/?name=${name}`);
       const data = response.data;
       console.log(data)
       dispatch({
@@ -42,7 +42,7 @@ export const getCountryByName = (name) => {
         payload: data,
       });
     } catch (error) {
-      alert("Error: " + error.message);;
+      alert("Error: " + error.message);
     }
   };
 };
@@ -50,7 +50,7 @@ export const getCountryByName = (name) => {
 export const getActivities = () => {
   return async (dispatch) => {
     try {
-      const response = await axios.get("http://localhost:3001/activities");
+      const response = await axios.get("/activities");
       const data = response.data;
       console.log(data)
       dispatch({type: GET_ACTIVITIES, payload: data });
@@ -64,7 +64,7 @@ export const getActivities = () => {
 export const getCountryByDetail = (id) =>{
   return async (dispatch) => {
     try {
-      const { data } = await axios.get(`http://localhost:3001/countries/${id}`);
+      const { data } = await axios.get(`/countries/${id}`);
         return dispatch({
           type: COUNTRY_DETAIL,
           payload: data,
@@ -84,7 +84,7 @@ export const createActivity = (form) => {
   return async (dispatch) => {
     try {
       const response = await axios.post(
-        "http://localhost:3001/activities",
+        "/activities",
         form
       );
     const data = response.data; 

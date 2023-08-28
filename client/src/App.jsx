@@ -8,8 +8,12 @@ import NavBar from './components/NavBar/NavBar';
 import { useLocation } from 'react-router-dom';
 import ActivityCardContainer from './views/ActivityCardContainer/ActivityCardContainer'
 import './App.css'
+import axios from 'axios';
 
 function App() {
+
+  //para no repetir el puerto:(se está configurando una URL base que se utilizará como prefijo para todas las peticiones realizadas con Axios) 
+axios.defaults.baseURL = "http://localhost:3002"
 
   const location = useLocation();
 
