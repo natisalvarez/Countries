@@ -12,8 +12,10 @@ import axios from 'axios';
 
 function App() {
 
-  //para no repetir el puerto:(se está configurando una URL base que se utilizará como prefijo para todas las peticiones realizadas con Axios) 
-axios.defaults.baseURL = "http://localhost:3002"
+//para no repetir el puerto:(se está configurando una URL base que se utilizará como prefijo para todas las peticiones realizadas con Axios) 
+// axios.defaults.baseURL = "http://localhost:3002"
+
+axios.defaults.baseURL = "http://countries-production-9e10.up.railway.app"
 
   const location = useLocation();
 
