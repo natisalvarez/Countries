@@ -5,23 +5,8 @@ const Landing = () => {
     return (
         <div className={style.landing}>
             <div>
-        <h1>  </h1>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+        
+        
             <Link to="/home" className={style.button}> Let's start! </Link>
         </div>
         </div>
