@@ -1,7 +1,7 @@
 const axios = require("axios");
 const server = require("./src/server");
 const { conn } = require('./src/db.js');
-const getApi = require(__dirname + '/../server/src/controllers/getApi.js');
+const getApi = require('../server/src/controllers/getApi.js');
 
 const PORT = process.env.PORT || 3002; 
 
