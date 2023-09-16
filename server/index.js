@@ -1,5 +1,6 @@
 const axios = require("axios");
 const server = require("./src/server");
+const { Country } = require('../server/src/db.js');
 const { conn } = require('./src/db.js');
 const PORT = process.env.PORT || 3002; 
 
