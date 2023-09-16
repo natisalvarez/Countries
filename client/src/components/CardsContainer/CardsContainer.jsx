@@ -10,7 +10,7 @@ const CardsContainer = ({ CountriesFilter }) => {
 
   // Despacho la acción para limpiar el filtro
     const handleFilterClear = () => {
-        dispatch(getCountries()); 
+        dispatch(getCountries());
       };
     
     console.log(CountriesFilter)
