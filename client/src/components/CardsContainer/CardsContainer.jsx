@@ -1,4 +1,4 @@
-import style from './cardsContainer.module.css';
+import style from './CardsContainer.module.css';
 import Card from '../Card/Card';
 import { useDispatch } from 'react-redux';
 import { getCountries } from '../../Redux/actions';
