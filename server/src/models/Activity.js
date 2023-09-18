@@ -38,10 +38,12 @@ module.exports = (sequelize) => {
 };
 
 /*
-   {
+  {
         "name": "Hiking",
         "difficulty": 4,
         "duration": 4,
-        "season": "summer"
-   }
+        "season": "summer",
+        "countryId": "ARG"
+  
+    }
 */

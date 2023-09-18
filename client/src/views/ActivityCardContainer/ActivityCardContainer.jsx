@@ -16,12 +16,13 @@ const ActivityCardContainer = () => {
     
     <div className={style.container}>
       <div className={style.cards}>
-      
-          {Array.isArray(actividades) &&
-            actividades.map((actividad) => (
-              <Actividad key={actividad.id} activity={actividad} />
-            ))}
-      
+      {Array.isArray(actividades) && actividades.length === 0 ? (
+      <div> <h2>You have not created an activity yet! Please, fill in the form to do it!</h2>
+        </div>
+     ) : (actividades.map((actividad) => (
+          <Actividad key={actividad.id} activity={actividad} />
+        ))
+      )}
       </div>
     </div>
   );
