@@ -25,6 +25,10 @@ const Detail = () => {
   return (
     <div className={style.detailWrapper}>
       <div className={style.containerDetail}>
+      <iframe
+          src="https://lottie.host/?file=4cefb2ae-491f-42ef-8a75-7a4086f3300a/ho4qFKsZkX.json"
+          className={style.backgroundIframe}
+        ></iframe>
         <section className={style.img}>
           <div>
             {details?.types?.map((item) => (

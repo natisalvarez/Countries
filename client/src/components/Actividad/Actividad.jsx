@@ -37,6 +37,7 @@ export default Actividad;
 
 
 /* 
+<iframe src="https://lottie.host/?file=8fcb7ecd-67d4-48b8-b872-a294ed62ea45/ZFAv6hhY04.json"></iframe>
 
 {
   Countries: [

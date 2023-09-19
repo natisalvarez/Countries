@@ -4,8 +4,7 @@
     text-align: center;
     display: flex;
     justify-content: center;
-    align-items: center;
-    background: url('/Users/natrangone/Documents/Coding Bootcamp Henry/CountriesAPP/Countries/client/src/assets/Enjoy the journey around the world! (1).png');
+    background-image: url("https://i.ibb.co/thw6j3K/Enjoy-the-journey-around-the-world-1.png");
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center center;
@@ -14,6 +13,8 @@
   
   .button {
     border-radius: 1px;
+    display: flex;
+    margin-top: 600px;
     color: white; 
     font-size: 150%;
   }

@@ -6,12 +6,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
+  background-image: url('');
+  /* background-color: #70A762; */
+  background-image: url('https://lottie.host/?file=4ecf832b-3e14-4832-afd7-45a537ccdee3/lYRPhNMc8r.lottie');
+  background-size: cover;
 }
 
-.formContainer {
-  background-color: #70A762;
 
+.formContainer {
+  /* background-image: url('https://i.pinimg.com/1200x/2b/16/b1/2b16b157053ffdf9a20d67675c89039e.jpg'); */
+  background-color: #70A762;
   align-items: center;
   margin-top: 20px;
   border: 1px solid;
@@ -47,8 +51,10 @@
   margin-top: 10px;
 }
 
+.formContainer button:hover {
+  transform: scale(1.1);
+}
 
-/* Mensaje de error */
 .errorMessage {
   color: red;
   font-size: 14px;

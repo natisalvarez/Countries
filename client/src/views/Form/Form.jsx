@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCountries, createActivity } from "../../Redux/actions";
 import style from "./Form.module.css";
 import { NavLink } from "react-router-dom";
+import axios from "axios";
 
 
 const Form = () => {
@@ -71,12 +72,12 @@ const Form = () => {
       return;
     }
     console.log(`se apretó el botón`);
-    dispatch(createActivity(form.name, form.difficulty, form.duration, form.season, form.countryId));
+    dispatch(createActivity(form));
     // se crea la actividad con lo escrito en el form
     // Restablecer el formulario después del envío
+    console.log(form)
     resetForm();
   };
-
 
   return (
     <div className={style.container}>
@@ -155,7 +156,6 @@ const Form = () => {
 
           <br />
 
-
           <div>
             <label> Which season is the perfect for this activity :</label>
             <select
@@ -176,14 +176,12 @@ const Form = () => {
 
           <br />
 
-
           <div>
             <label> Country : </label>
             <select
               value={form.countryId}
               onChange={handleCountryChange}
-              name="countryId"
-            >
+              name="countryId">
               <option value="All Countries">All Countries</option>
               {countries.map((countryId) => (
                 <option key={countryId.id} value={countryId.id}>
@@ -194,9 +192,7 @@ const Form = () => {
             <span className={style.errorMessage}>{errors.countryId}</span>
           </div>
 
-
           <br />
-
 
           <div>
             <button type="submit" value="Submit">
@@ -205,9 +201,7 @@ const Form = () => {
           </div>
         </form>
 
-
         <br />
-
 
         <button>
           <NavLink to="/home">Back</NavLink>

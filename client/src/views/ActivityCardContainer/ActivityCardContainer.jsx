@@ -6,6 +6,7 @@ import Actividad from '../../components/Actividad/Actividad';
 
 const ActivityCardContainer = () => {
   const actividades = useSelector((state) => state.allActivitiesFilter);
+  console.log(actividades)
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -19,7 +20,7 @@ const ActivityCardContainer = () => {
       {Array.isArray(actividades) && actividades.length === 0 ? (
       <div> <h2>You have not created an activity yet! Please, fill in the form to do it!</h2>
         </div>
-     ) : (actividades.map((actividad) => (
+     ) : (actividades?.map((actividad) => (
           <Actividad key={actividad.id} activity={actividad} />
         ))
       )}
