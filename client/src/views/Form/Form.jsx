@@ -39,17 +39,25 @@ const Form = () => {
     });
   };
 
+  const validation = (form) => {
+    const errors = {}
+    
+if (!form.name) errors.name = "You must select an activity";
+if (!form.duration) errors.duration = "You must select the duration";
+if (!form.difficulty) errors.difficulty = "You must select a level of difficutly";
+if (!form.season) errors.season = "You must select a season";
+if (!form.countryId) errors.countries = "You must select a country";
+  
+  return errors
+  }
 
   const changeHandler = (event) => {
     const property = event.target.name;
     console.log(event.target)
     const value = event.target.value;
-
-
     setForm({ ...form, [property]: value });
     setErrors({});
   };
-
 
   const resetForm = () => {
     setForm(initialFormState);
@@ -58,6 +66,7 @@ const Form = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    const errors = validation(form);
     setErrors(errors);
     if (Object.keys(errors).length > 0) {
       return;
