@@ -41,20 +41,19 @@ const Form = () => {
 
   const validation = (form) => {
     const errors = {}
-    
-if (!form.name) errors.name = "You must select an activity";
-if (!form.duration) errors.duration = "You must select the duration";
-if (!form.difficulty) errors.difficulty = "You must select a level of difficutly";
-if (!form.season) errors.season = "You must select a season";
-if (!form.countryId) errors.countries = "You must select a country";
-  
-  return errors
-  }
+    if (!form.name) errors.name = "  You must select an activity";
+    if (!form.duration) errors.duration = "  You must select the duration";
+    if (!form.difficulty) errors.difficulty = "  You must select a level of difficutly";
+    if (!form.season) errors.season = "  You must select a season";
+    if (!form.countryId) errors.countryId = "  You must select a country";
+    return errors
+  };
 
   const changeHandler = (event) => {
     const property = event.target.name;
     console.log(event.target)
     const value = event.target.value;
+    validation({ ...form, [property]: value })
     setForm({ ...form, [property]: value });
     setErrors({});
   };
@@ -133,14 +132,14 @@ if (!form.countryId) errors.countries = "You must select a country";
           <div>
             <label> Duration (hours) </label>
             <select
-             id="duration"
-             name="duration"
-             value={form.duration}
-             onChange={changeHandler}>
-             <option value="" disabled>
-               Select the time
-             </option>
-             <option value="1">1</option>
+              id="duration"
+              name="duration"
+              value={form.duration}
+              onChange={changeHandler}>
+              <option value="" disabled>
+                Select the time
+              </option>
+              <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
@@ -150,10 +149,10 @@ if (!form.countryId) errors.countries = "You must select a country";
               <option value="8">8</option>
               <option value="9">9</option>
               <option value="10">10</option>
-             </select>
+            </select>
             <span className={style.errorMessage}>{errors.duration}</span>
           </div>
-    
+
           <br />
 
 
@@ -165,7 +164,7 @@ if (!form.countryId) errors.countries = "You must select a country";
               value={form.season}
               onChange={changeHandler}>
               <option value="" disabled>
-               Season
+                Season
               </option>
               <option value="summer">summer</option>
               <option value="autumn">autumn</option>
@@ -192,6 +191,7 @@ if (!form.countryId) errors.countries = "You must select a country";
                 </option>
               ))}
             </select>
+            <span className={style.errorMessage}>{errors.countryId}</span>
           </div>
 
 
