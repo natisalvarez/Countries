@@ -5,19 +5,19 @@ h4{
  .cardContainer {
    display: flex;
    flex-direction:column;
-    width: 190px;
-    height: 300px;
+    width: 200px;
+    height: 350px;
     background: #f5f5f5;
     padding: 2rem 1.5rem;
-    transition: box-shadow .3s ease, transform .2s ease;
-    margin: auto;
+    margin: 10px;
+   
     border-radius: 5px;
     border: solid  #70A762 4px;
  }
  
  .cardInfo {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     transition: transform .2s ease, opacity .2s ease;
@@ -37,12 +37,10 @@ h4{
     font-size: 1em;
     font-weight: 600;
     line-height: 1.5rem;
+    /* linea del medio */
     justify-content: center;
  }
 
- .countryName{
-   margin: auto;
- }
  
  .cardSubtitle {
     color: black;
@@ -70,10 +68,8 @@ h4{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 10px;
     flex-wrap: wrap;
     align-content: center;
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     color: #484848;
  }

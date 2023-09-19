@@ -16,10 +16,10 @@ const Actividad = ({ activity }) => {
       {/* {activity.Countries && activity.Countries.map((element) => (
         <div key={element.id}> {element?.coatOfArms} </div>
       ))}  */} </div>
-      <h3 className={style.cardTitle}>Difficulty: {activity.difficulty}</h3>
+      <h3 className={style.cardTitle}>Difficulty level: {activity.difficulty}</h3>
       <h3 className={style.cardTitle}>Season: {activity.season}</h3>
       <h3 className={style.cardTitle}>Duration: {activity.duration} </h3>
-      <h3 className={style.cardTitle}>Countries:</h3>
+      <h3 className={style.cardTitle}>Country:</h3>
       <div>
            {/* si hay una propiedad countries en activity hago el mapeo */}
             {/* cuando mapeo es necesario usar la key para que react no rompa:

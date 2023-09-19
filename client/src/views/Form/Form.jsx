@@ -9,14 +9,14 @@ const Form = () => {
   const dispatch = useDispatch();
   const countries = useSelector((state) => state.Countries) || [];
 
-console.log(countries)
+  console.log(countries)
 
   useEffect(() => {
     //para que los paises esten disponibles antes de seleccionar una actividad
     dispatch(getCountries());
   }, [dispatch]);
 
-// estado inicial del formulario: vacío
+  // estado inicial del formulario: vacío
   const initialFormState = {
     name: "",
     difficulty: "",
@@ -40,42 +40,10 @@ console.log(countries)
   };
 
 
-  const validation = (form) => {
-    const errors = {};
-
-
-    if (!form.name || !/[a-z]+/.test(form.name)) {
-      errors.name = "Activity is required and must be a word";
-    }
-
-
-    if (!/^[1-5]$/.test(form.difficulty)) {
-      errors.difficulty = "Invalid Number. Please enter a number between 1 and 5.";
-    }
-
-
-    if (!/^(1?[0-9]|2[0-4])$/.test(form.duration)) {
-      errors.duration = "Invalid Number. Please enter a number between 1 and 24.";
-    }
-
-
-    if (!["summer", "winter", "autumn", "spring"].includes(form.season)) {
-      errors.season = "Invalid season. Please choose one of: summer, winter, autumn, spring.";
-    }
-
-    if (form.countryId.length < 1) {
-      errors.countryId = "Debes seleccionar al menos un (1) país";
-    }
-
-
-    return errors;
-  };
-
-
   const changeHandler = (event) => {
     const property = event.target.name;
     console.log(event.target)
-    const value = event.target.name === "season" ? event.target.value.toLowerCase() : event.target.value;
+    const value = event.target.value;
 
 
     setForm({ ...form, [property]: value });
@@ -90,7 +58,6 @@ console.log(countries)
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const errors = validation(form);
     setErrors(errors);
     if (Object.keys(errors).length > 0) {
       return;
@@ -112,20 +79,20 @@ console.log(countries)
           <div>
             <label htmlFor="name"> Activity </label>
             <select
-            id="name"
-            name="name"
-            value={form.name}
-            onChange={changeHandler}>
-            <option value="" disabled>
-            Select an activity
-            </option>
-            <option value="Swimming">Swimming</option>
-            <option value="Trekking">Trekking</option>
-            <option value="Surfing">Surfing</option>
-            <option value="Skiing">Skiing</option>
-            <option value="Cycling">Cycling</option>
-            <option value="Cycling">Clymbing</option>
-          </select>
+              id="name"
+              name="name"
+              value={form.name}
+              onChange={changeHandler}>
+              <option value="" disabled>
+                Select an activity
+              </option>
+              <option value="Swimming">Swimming</option>
+              <option value="Trekking">Trekking</option>
+              <option value="Surfing">Surfing</option>
+              <option value="Skiing">Skiing</option>
+              <option value="Cycling">Cycling</option>
+              <option value="Cycling">Clymbing</option>
+            </select>
             <span className={style.errorMessage}>{errors.name}</span>
           </div>
 
@@ -133,12 +100,20 @@ console.log(countries)
 
           <div>
             <label> Level of difficulty (1 to 5) </label>
-            <input
-              type="text"
-              value={form.difficulty}
-              onChange={changeHandler}
+            <select
+              id="difficulty"
               name="difficulty"
-            />
+              value={form.difficulty}
+              onChange={changeHandler}>
+              <option value="" disabled>
+                Select a level of difficulty
+              </option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
             <span className={style.errorMessage}>{errors.difficulty}</span>
           </div>
 
@@ -147,37 +122,55 @@ console.log(countries)
 
 
           <div>
-            <label> Duration (hs) </label>
-            <input
-              type="text"
-              value={form.duration}
-              onChange={changeHandler}
-              name="duration"
-            />
+            <label> Duration (hours) </label>
+            <select
+             id="duration"
+             name="duration"
+             value={form.duration}
+             onChange={changeHandler}>
+             <option value="" disabled>
+               Select the time
+             </option>
+             <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+             </select>
             <span className={style.errorMessage}>{errors.duration}</span>
           </div>
-
-
+    
           <br />
 
 
           <div>
-            <label> Season </label>
-            <input
-              type="text"
-              value={form.season}
-              onChange={changeHandler}
+            <label> Which season is the perfect for this activity :</label>
+            <select
+              id="season"
               name="season"
-            />
-            <span className={style.errorMessage}>{errors.season}</span>
+              value={form.season}
+              onChange={changeHandler}>
+              <option value="" disabled>
+               Season
+              </option>
+              <option value="summer">summer</option>
+              <option value="autumn">autumn</option>
+              <option value="winter">winter</option>
+              <option value="spring">spring</option>
+            </select>
+            <span className={style.errorMessage}>{errors.difficulty}</span>
           </div>
 
-
           <br />
 
 
           <div>
-            <label> Country ! </label>
+            <label> Country : </label>
             <select
               value={form.countryId}
               onChange={handleCountryChange}
@@ -186,7 +179,7 @@ console.log(countries)
               <option value="All Countries">All Countries</option>
               {countries.map((countryId) => (
                 <option key={countryId.id} value={countryId.id}>
-                  {countryId.id}
+                  {countryId.name}
                 </option>
               ))}
             </select>

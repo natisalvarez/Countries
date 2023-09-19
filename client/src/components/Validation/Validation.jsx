@@ -1,6 +1,5 @@
 const validation = (form) => {
 
-
     const errors = {};
 
     if (!form.name || !/[a-z]+/.test(form.name)) {
