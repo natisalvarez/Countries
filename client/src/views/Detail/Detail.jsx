@@ -28,6 +28,7 @@ const Detail = () => {
       <iframe
           src="https://lottie.host/?file=4cefb2ae-491f-42ef-8a75-7a4086f3300a/ho4qFKsZkX.json"
           className={style.backgroundIframe}
+          loading="lazy"
         ></iframe>
         <section className={style.img}>
           <div>
@@ -36,22 +37,23 @@ const Detail = () => {
             ))}
           </div>
           <img
-            src={details.image}
-            alt={`${details.name} sprite`}
+            src={details?.image}
+            alt="countryImage"
+            loading="lazy"
             className={style.detailImg}
           />
         </section>
         <section className={style.infoDetail}>
-          <h1 className={style.detailName}>{details.name}</h1>
+          <h1 className={style.detailName}>{details?.name}</h1>
 
           <div className={style.details}>
-            <p>Name: {details.name}</p>
+            <p>Name: {details?.name}</p>
             <p>ID: {id}</p>
-            <p>Continent: {details.continent}</p>
-            <p>Capital: {details.capital}</p>
-            <p>Subregion: {details.subregion}</p>
-            <p>Area: {details.area}</p>
-            <p>Population: {details.population}</p>
+            <p>Continent: {details?.continent}</p>
+            <p>Capital: {details?.capital}</p>
+            <p>Subregion: {details?.subregion}</p>
+            <p>Area: {details?.area}</p>
+            <p>Population: {details?.population}</p>
           </div>
         </section>
 

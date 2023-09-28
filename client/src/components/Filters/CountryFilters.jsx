@@ -6,7 +6,7 @@ import style from "./CountryFilters.module.css";
 
 const CountryFilters = () => {
   const dispatch = useDispatch();
-  const countries = useSelector((state) => state.allActivities);
+  const countries = useSelector((state) => state?.allActivities);
 
   
   const continentOptions = [
@@ -48,7 +48,7 @@ const CountryFilters = () => {
           <h3> Continents </h3>
 
           <select onChange={handleFilterContinent} className={style.select}>
-            {continentOptions.map((option) => (
+            {continentOptions?.map((option) => (
               <option className={style.option} key={option.value} value={option.value}>
               {option.label}
               </option>

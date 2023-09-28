@@ -14,21 +14,18 @@ const ActivityCardContainer = () => {
   }, [dispatch]);
 
   return (
-    
     <div className={style.container}>
       <div className={style.cards}>
-      {Array.isArray(actividades) && actividades.length === 0 ? (
+      {Array.isArray(actividades) && actividades?.length === 0 ? (
       <div> <h2>You have not created an activity yet! Please, fill in the form to do it!</h2>
         </div>
      ) : (actividades?.map((actividad) => (
-          <Actividad key={actividad.id} activity={actividad} />
+          <Actividad key={actividad?.id} activity={actividad} />
         ))
       )}
       </div>
     </div>
-  );
-};
-
+  )};
 
 export default ActivityCardContainer;
 

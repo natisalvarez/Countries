@@ -11,7 +11,8 @@ import {
   FILTER_ACTIVITIES,
   ORDER,
   GET_ACTIVITIES,
-  COUNTRY_ACTIVITIES
+  COUNTRY_ACTIVITIES,
+  DELETE_ACTIVITY
  
 } from "./actionTypes";
 
@@ -135,6 +136,15 @@ export const createActivity = (form) => {
     };
   };
   
-
-
- 
+  export const deleteActivity = (id) => {
+    return async (dispatch) => {
+      try {
+        const response = await axios.delete(`/activities/${id}`);
+        const data = response.data;
+        dispatch({type: DELETE_ACTIVITY, payload: data });
+      } catch (error) {
+        alert("Error: " + error.response.data.error)
+      }
+    }
+  };
+  

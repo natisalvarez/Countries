@@ -25,18 +25,18 @@ const CardsContainer = ({ CountriesFilter }) => {
           ? (<p>No results matched. Please, refresh Countries to look for a new one!</p>) 
           : (
             <div className={style.cards}>
-              {CountriesFilter.map((country) => (
+              {CountriesFilter?.map((country) => (
                 <Card
-                  key={country.id}
-                  id={country.id}
-                  name={country.name}
-                  img={country.image}
-                  continent={country.continent}
-                  capital={country.capital}
-                  subregion={country.subregion}
-                  population={country.population}
-                  area={country.area}
-                  flag={country.flag}
+                  key={country?.id}
+                  id={country?.id}
+                  name={country?.name}
+                  img={country?.image}
+                  continent={country?.continent}
+                  capital={country?.capital}
+                  subregion={country?.subregion}
+                  population={country?.population}
+                  area={country?.area}
+                  flag={country?.flag}
                 />
               ))}
             </div>

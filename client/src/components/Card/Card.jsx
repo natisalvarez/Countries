@@ -13,7 +13,7 @@ const Card = ({ id, name, img, continent }) => { // ver continent
 
             <div className={style.cardInfo}>
 
-            <h4 className={style.cardTitle}>{name.toUpperCase()}</h4>
+            <h4 className={style.cardTitle}>{name?.toUpperCase()}</h4>
             <p className={style.cardSubtitle}> Continent: {continent}</p>
             </div>
             </Link>

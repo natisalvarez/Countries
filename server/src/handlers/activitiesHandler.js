@@ -26,9 +26,8 @@ const postActivitiesHandler = async (req, res) => {
   }
 };
 
-
 const deleteActivityHandler = async (req, res) => {
-    const { id } = req.params;
+    const { id } = req.query;
     try {
       if (!id || isNaN(id)) {
         throw new Error("ID inválida o no numérica");
@@ -36,9 +35,8 @@ const deleteActivityHandler = async (req, res) => {
       
       const resp = await deleteActivity(+id);
       if (!resp) {
-        throw new Error("No se encontró ninguna actividad con el ID especificado");
+        throw new Error("No se pudo eliminar la actividad");
       }
-      
       res.status(200).json(resp);
     } catch (error) {
       res.status(500).json({ error: error.message });

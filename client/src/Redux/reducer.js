@@ -162,6 +162,13 @@ const reducer = (state = initialState, action) => {
               activitiesCountries,
             };
         }
+
+        case 'DELETE_ACTIVITY':
+            return {
+              ...state,
+              allActivities: action.payload,
+            };
+      
         
         default: return { ...state }
     }
