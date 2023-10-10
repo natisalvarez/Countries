@@ -34,15 +34,12 @@ const NavBar = () => {
         <li><Link to="/form" className={styles.upward}> FORM </Link></li>
         <li><Link to="/activities" className={styles.upward}> ACTIVITIES </Link></li>
       </ul>
-
-        <div>
-          <SearchBar
-            searchName={searchName}
+      <div>
+        {location.pathname === '/home' && 
+        <SearchBar searchName={searchName}
             handleChange={handleChange}
-            handleSubmit={handleSubmit}
-          />
-        </div>
-    
+            handleSubmit={handleSubmit}/>}
+      </div>
     </div>
   );
 };

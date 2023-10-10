@@ -7,6 +7,7 @@ import style from "./Home.module.css"
 import CountryOrder from '../../components/Filters/CountryOrder';
 import CountryFilters from '../../components/Filters/CountryFilters';
 import Pagination from "../../components/Pagination/Pagination";
+import SearchBar from '../../components/SearchBar/SearchBar';
 
 
 const Home = () => {

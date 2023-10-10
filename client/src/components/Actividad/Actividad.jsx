@@ -11,7 +11,8 @@ const Actividad = ({ activity }) => {
 const dispatch = useDispatch ();
 
   const onClick = () =>{
-    dispatch(deleteActivity(activity.id));
+    console.log(activity.id)
+    dispatch(deleteActivity(Number(activity.id)));
   }
   
   return (
@@ -32,7 +33,8 @@ const dispatch = useDispatch ();
         <h3 className={style.countryName} key={element?.id}>{element?.name}</h3>
       ))}
       </div>
-      <button className={style.cardTitle} onClick={(activity?.id)}> Delete </button>
+     {/* El botón del onClick lleva una callback adentro para que no se ejecute la función al cargarse el componente */}
+      <button className={style.cardTitle} onClick={() => onClick(activity?.id)}> Delete </button>
     </div>
   );
 };

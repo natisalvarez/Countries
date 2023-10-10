@@ -9,7 +9,8 @@ import {
     FILTER_ACTIVITIES,
     ORDER,
     GET_ACTIVITIES,
-    COUNTRY_ACTIVITIES
+    COUNTRY_ACTIVITIES,
+    DELETE_ACTIVITY
 
 } from "./actionTypes";
 
@@ -163,7 +164,7 @@ const reducer = (state = initialState, action) => {
             };
         }
 
-        case 'DELETE_ACTIVITY':
+        case DELETE_ACTIVITY:
             return {
               ...state,
               allActivities: action.payload,

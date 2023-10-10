@@ -28,7 +28,6 @@ const Detail = () => {
       <iframe
           src="https://lottie.host/?file=4cefb2ae-491f-42ef-8a75-7a4086f3300a/ho4qFKsZkX.json"
           className={style.backgroundIframe}
-          loading="lazy"
         ></iframe>
         <section className={style.img}>
           <div>
@@ -39,7 +38,6 @@ const Detail = () => {
           <img
             src={details?.image}
             alt="countryImage"
-            loading="lazy"
             className={style.detailImg}
           />
         </section>
