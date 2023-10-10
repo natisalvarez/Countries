@@ -27,7 +27,7 @@ const postActivitiesHandler = async (req, res) => {
 };
 
 const deleteActivityHandler = async (req, res) => {
-    const { id } = req.query;
+    const { id } = req.params;
     try {
       if (!id || isNaN(id)) {
         throw new Error("ID inválida o no numérica");
