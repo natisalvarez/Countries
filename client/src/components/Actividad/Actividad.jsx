@@ -1,18 +1,18 @@
 
 import style from './Actividad.module.css';
-import { deleteActivity } from '../../Redux/actions';
+import { deleteActivity, getActivities } from '../../Redux/actions';
 import { useDispatch } from 'react-redux';
+import { useState } from "react";
 
 let image = 'https://lottie.host/1a3d7496-4de5-41a6-aa0a-8500ef2ba7ef/Wzd1PXZ8i8.json';
 
-// recibe activity por props
-// componente tonto/dump
 const Actividad = ({ activity }) => {
 const dispatch = useDispatch ();
 
   const onClick = () =>{
     console.log(activity.id)
-    dispatch(deleteActivity(Number(activity.id)));
+    dispatch(deleteActivity(Number(activity.id)), 
+    dispatch(getActivities()))
   }
   
   return (

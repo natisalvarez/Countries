@@ -139,12 +139,13 @@ export const createActivity = (form) => {
   export const deleteActivity = (id) => {
     return async (dispatch) => {
       try {
-        const response = await axios.delete(`/activities/${id}`);
-        const data = response.data;
-        dispatch({type: DELETE_ACTIVITY, payload: data });
+        const { data } = await axios.delete(`/activities/${id}`);
+        return dispatch({
+          type: DELETE_ACTIVITY,
+          payload: data
+        });
       } catch (error) {
-        alert("Error: " + error.response.data.error)
-      }
+      alert("Error: ");
     }
-  };
+  }};
   

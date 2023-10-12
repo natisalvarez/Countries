@@ -24,7 +24,7 @@ res.status(200).json(country);
 };
 
 
-/* http://localhost:3001/countries/name?name=Argentina */
+/* http://localhost:3002/countries?name=argentina*/
 
 module.exports = {
   getCountryByIdHandler,

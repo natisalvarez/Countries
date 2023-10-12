@@ -1,4 +1,4 @@
-import { getActivities, getCountryActivity } from "../../Redux/actions";
+import { getActivities, getCountryActivity, deleteActivity } from "../../Redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import style from './ActivityCardContainer.module.css';

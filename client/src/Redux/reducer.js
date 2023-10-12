@@ -90,7 +90,7 @@ const reducer = (state = initialState, action) => {
                         allActivitiesFilter: activity.Countries,
                     };
                 } else {
-                    // No se encuentra el paìs y se devuelve un array vacío
+                    // No se encuentra el país y se devuelve un array vacío
                     return {
                         ...state,
                         CountryFilter: [],
@@ -165,13 +165,17 @@ const reducer = (state = initialState, action) => {
         }
 
         case DELETE_ACTIVITY:
-            return {
-              ...state,
-              allActivities: action.payload,
-            };
+            case DELETE_ACTIVITY:
+                const activityIdToBeDeleted = action.payload; // El id de la actividad a eliminar
+                const updatedActivitiesFilter = state.allActivitiesFilter.filter(
+                    (activity) => activity.id !== activityIdToBeDeleted
+                );
+                return {
+                    ...state,
+                    allActivitiesFilter: updatedActivitiesFilter
+                }
       
-        
-        default: return { ...state }
+        default: return {...state }
     }
 }
 

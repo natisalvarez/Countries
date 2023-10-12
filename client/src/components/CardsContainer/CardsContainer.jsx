@@ -22,7 +22,7 @@ const CardsContainer = ({ CountriesFilter }) => {
         </button>
 
           {CountriesFilter.length === 0 
-          ? (<p>No results matched. Please, refresh Countries to look for a new one!</p>) 
+          ? (<p>No results matched. Please, refresh Countries!</p>) 
           : (
             <div className={style.cards}>
               {CountriesFilter?.map((country) => (
