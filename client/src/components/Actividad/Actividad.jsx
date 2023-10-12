@@ -11,8 +11,8 @@ const dispatch = useDispatch ();
 
   const onClick = () =>{
     console.log(activity.id)
-    dispatch(deleteActivity(Number(activity.id)), 
-    dispatch(getActivities()))
+    dispatch(deleteActivity(Number(activity.id))), 
+    dispatch(getActivities())
   }
   
   return (

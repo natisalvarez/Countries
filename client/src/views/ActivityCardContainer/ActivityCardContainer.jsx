@@ -1,4 +1,4 @@
-import { getActivities, getCountryActivity, deleteActivity } from "../../Redux/actions";
+import { getActivities} from "../../Redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import style from './ActivityCardContainer.module.css';
@@ -18,7 +18,9 @@ const ActivityCardContainer = () => {
     <div className={style.cards}>
       {actividades && actividades?.length === 0 ? (
         <div>
-          <h2>You have not created an activity yet! Please, fill in the form to do it!</h2>
+          <h2>You have not created an activity yet! 
+            <br/>
+            Please, fill in the form to do it!</h2>
         </div>
       ) : (
         //Hay que usar object.keys porque actividades no es un array. 
