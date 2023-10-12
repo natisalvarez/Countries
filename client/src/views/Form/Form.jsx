@@ -37,7 +37,7 @@ const Form = () => {
       ...form,
       //guardo una copia de estado del countryId
       countryId: selectedCountry,
-    });
+  });
   };
 
   const validation = (form) => {
