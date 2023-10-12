@@ -59,7 +59,6 @@ const Pagination = ({ itemsPerPage, totalItems, currentPage, onPageChange }) => 
       >
         Next Page
       </a>
-      <p> {currentPage} </p>
     </nav>
   );
 };
