@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import style from './ActivityCardContainer.module.css';
 import Actividad from '../../components/Actividad/Actividad';
+import NoActivitiesComponent from "../../components/NoActivitiesComponent/NoActivitiesComponent";
 
 const ActivityCardContainer = () => {
   const actividades = useSelector((state) => state.allActivitiesFilter);
@@ -15,26 +16,17 @@ const ActivityCardContainer = () => {
   
   return (
     <div className={style.container}>
-    <div className={style.cards}>
       {actividades && actividades?.length === 0 ? (
-        <div>
-          <h2>You have not created an activity yet! 
-            <br/>
-            Please, fill in the form to do it!</h2>
-        </div>
+     <NoActivitiesComponent/>
       ) : (
-        //Hay que usar object.keys porque actividades no es un array. 
         Object.keys(actividades).map((key) => {
           const actividad = actividades[key];
           return (
-            <div key={key}>
               <Actividad activity={actividad} />
-            </div>
           );
         })
       )}
     </div>
-  </div>
 )};
 
   // return (

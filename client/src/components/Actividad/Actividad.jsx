@@ -2,7 +2,6 @@
 import style from './Actividad.module.css';
 import { deleteActivity, getActivities } from '../../Redux/actions';
 import { useDispatch } from 'react-redux';
-import { useState } from "react";
 
 let image = 'https://lottie.host/1a3d7496-4de5-41a6-aa0a-8500ef2ba7ef/Wzd1PXZ8i8.json';
 
@@ -16,25 +15,27 @@ const dispatch = useDispatch ();
   }
   
   return (
-    <div className={style.cardContainer}>
-      <h3 className={style.cardInfo}>Name: {activity?.name}</h3>
+    <div className={style.cards}>
+      <h3 className={style.cardTitle}>Activity name: 
+      <br />
+      {activity?.name}</h3>
       <div className={style.imgContainer}>
       <iframe className={style.image} src="https://lottie.host/?file=1a3d7496-4de5-41a6-aa0a-8500ef2ba7ef/Wzd1PXZ8i8.json"></iframe>
       {/* <img className={style.image} src={activity.Countries.coatOfArms} alt="" /> </div> */}
       {/* {activity.Countries && activity.Countries.map((element) => (
         <div key={element.id}> {element?.coatOfArms} </div>
       ))}  */} </div>
-      <h3 className={style.cardTitle}>Difficulty level: {activity?.difficulty}</h3>
-      <h3 className={style.cardTitle}>Season: {activity?.season}</h3>
-      <h3 className={style.cardTitle}>Duration: {activity?.duration} </h3>
-      <h3 className={style.cardTitle}>Country:</h3>
-      <div>
+      <h3 className={style.cardInfo}>Difficulty level: {activity?.difficulty}</h3>
+      <h3 className={style.cardInfo}>Season: {activity?.season}</h3>
+      <h3 className={style.cardInfo}>Duration: {activity?.duration} </h3>
+      <h3 className={style.cardInfo}>Country:</h3>
+      <div className={style.countryName} >
       {activity.Countries && activity.Countries.map((element) => (
-        <h3 className={style.countryName} key={element?.id}>{element?.name}</h3>
+        <h3 key={element?.id}>{element?.name}</h3>
       ))}
       </div>
      {/* El botón del onClick lleva una callback adentro para que no se ejecute la función al cargarse el componente */}
-      <button className={style.cardTitle} onClick={() => onClick(activity?.id)}> Delete </button>
+      <button className={style.button} onClick={() => onClick(activity?.id)}> Delete </button>
     </div>
   );
 };

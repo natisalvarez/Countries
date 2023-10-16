@@ -1,7 +1,7 @@
 import React from "react";
 import style from './Pagination.module.css';
 
-/* Acá e calcula el número total de páginas necesarias para mostrar 
+/* Acá se calcula el número total de páginas necesarias para mostrar 
 todos los elementos dividiendo cantidad total de elementos cantidad 
 de elementos por página) y redondeando hacia arriba usando Math.ceil().
 */

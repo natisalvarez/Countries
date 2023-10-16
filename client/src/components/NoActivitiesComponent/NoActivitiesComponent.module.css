@@ -1,31 +1,42 @@
-
 .container {
-    /* border: black solid 10px; */
     display: flex;
-    flex-direction: wrap;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    flex-direction: column;
     padding: 20%;
-    background-image: url('https://www.countryreports.org/new-index-assets/images/hp-container-one-map.png');
-    background-size: cover;
-}
-/*
-.cards {
-  border: color yellow solid 20px;
-  display: flex;
-  flex-wrap: wrap;
-  width: auto;
-  height: auto;
-  padding: auto;
-  transition: box-shadow .3s ease, transform .2s ease;
-  margin: auto;
-  border-radius: 5px;
-  box-shadow: 0 8px 20px #23232333;
-}
+    padding: 40px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    color: black;
+    transition: box-shadow .3s ease, transform .2s ease;
+    border-radius: 5px;
+    box-shadow: 0 8px 20px #23232333;
+  }
 
-
+  .container button{
+    display: flex;
+    margin-top: 20px;
+    background-color: #DF6E5A;
+    padding: 8px;
+    border-radius: 5px;
+    color: white;
+  }
   
+  .container button:hover {
+    transform: scale(1.1);
+  }
+  
+  /* .cards {
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    height: auto;
+    padding: auto;
+    transition: box-shadow .3s ease, transform .2s ease;
+    margin: auto;
+    border-radius: 5px;
+    box-shadow: 0 8px 20px #23232333;
+  }
   
   .cardInfo {
     border: yellowgreen;
@@ -85,16 +96,4 @@
     .option {
       font-family: 'Poppins', sans-serif;
       font-size: 14px;
-    }
-
-  .container button{
-    display: flex;
-    margin: 5%;
-    background-color: #DF6E5A;
-    color: white;
-  }
-
-  .container:hover {
-    transform: scale(1.1);
-  }
-  */
+    } */
