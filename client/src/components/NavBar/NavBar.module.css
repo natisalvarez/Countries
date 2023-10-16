@@ -11,7 +11,7 @@ height: 12vh;
 display: flex;
 align-items: center;
 justify-content: space-around;
-background: #70A762;
+background: #79B5B9;
 }
 
 .navLinks{
@@ -42,7 +42,7 @@ background: #70A762;
     left: 0;
     height: 3px;
     width: 0%;
-    background: #70A762;
+    background: #DF6E5A;
     border-radius: 12px;
     transition: all 0.4s ease;
     }

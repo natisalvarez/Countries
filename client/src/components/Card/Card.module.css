@@ -1,16 +1,16 @@
 h4{
-   font-size: 2px;   
+   font-size: 4px;   
    }
 
 .cardContainer {
    width: 190px;
    height: 260px;
+   border-radius: 20px;
    background: #f5f5f5;
    padding: 2rem 1.5rem;
    transition: box-shadow .3s ease, transform .2s ease;
    margin: 30px;
-   border-radius: 5px;
-   border: solid #70A762 4px;
+   border: solid #F0CC5C 2px;
 }
 
 .cardInfo {
