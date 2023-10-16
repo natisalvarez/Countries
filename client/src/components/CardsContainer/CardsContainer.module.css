@@ -1,13 +1,15 @@
 .container{
     justify-content: center;
     padding: 3%;
+    background-image: url('https://www.countryreports.org/new-index-assets/images/hp-container-one-map.png');
+    background-size: cover;
 }
 
 .cards { /*este hay que modificar si se quieren mover las cards chicas*/
     display: flex;
     border-radius: 20px;
     flex-direction: row;
-    background-color:#79B5B9;
+
     flex-wrap: wrap ;
     width: 90%;
     justify-content: center;

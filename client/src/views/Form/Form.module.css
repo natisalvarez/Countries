@@ -61,6 +61,15 @@
   margin-top: 5px;
 }
 
+.backgroundIframe {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vw;
+  z-index: -2000; /* para colocar el iframe detrás de otros elementos */
+  opacity: 2; 
+}
 
 
 /* .container {
