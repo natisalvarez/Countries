@@ -2,9 +2,8 @@
 .container {
     /* border: black solid 10px; */
     display: flex;
-    flex-direction: wrap;
-    justify-content: center;
-    align-items: center;
+    flex-flow: row wrap;
+    align-items: flex-start;
     text-align: center;
     padding: 20%;
     background-image: url('https://www.countryreports.org/new-index-assets/images/hp-container-one-map.png');

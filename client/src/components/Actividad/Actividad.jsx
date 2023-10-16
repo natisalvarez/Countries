@@ -15,6 +15,7 @@ const dispatch = useDispatch ();
   }
   
   return (
+    <div className={style.container}>
     <div className={style.cards}>
       <h3 className={style.cardTitle}>Activity name: 
       <br />
@@ -36,6 +37,7 @@ const dispatch = useDispatch ();
       </div>
      {/* El botón del onClick lleva una callback adentro para que no se ejecute la función al cargarse el componente */}
       <button className={style.button} onClick={() => onClick(activity?.id)}> Delete </button>
+    </div>
     </div>
   );
 };
