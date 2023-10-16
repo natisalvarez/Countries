@@ -16,11 +16,6 @@ const CardsContainer = ({ CountriesFilter }) => {
     console.log(CountriesFilter)
     return (
         <div className={style.container}>
-       
-        <button onClick={handleFilterClear} className={style.clearButton}>
-          Refresh Countries
-        </button>
-
           {CountriesFilter.length === 0 
           ? (<p>No results matched. Please, refresh Countries!</p>) 
           : (

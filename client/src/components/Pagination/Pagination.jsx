@@ -40,7 +40,7 @@ const Pagination = ({ itemsPerPage, totalItems, currentPage, onPageChange }) => 
       >
         Previous Page
       </a>
-      <div className={style.pageNumbers}>
+      <div className={style.pageNumber}>
         {[...Array(totalPages)].map((_, index) => (
           <a
             key={index}

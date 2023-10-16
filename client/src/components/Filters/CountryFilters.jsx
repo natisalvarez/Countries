@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { filterCountryByContinent, filterActivities } from '../../Redux/actions'
 import style from "./CountryFilters.module.css";
+import { getCountries } from '../../Redux/actions';
 
 
 const CountryFilters = () => {
@@ -40,13 +41,15 @@ const CountryFilters = () => {
     console.log(countries);
   };
 
+  const handleFilterClear = () => {
+    dispatch(getCountries());
+  };
+
   return (
     <>
       <div className={style.filtersContainer}>
-        <div className={style.section}>
-          
+        <div className={style.section}>  
           <h3> Continents </h3>
-
           <select onChange={handleFilterContinent} className={style.select}>
             {continentOptions?.map((option) => (
               <option className={style.option} key={option.value} value={option.value}>
@@ -58,7 +61,6 @@ const CountryFilters = () => {
 
         <div className={style.section}>
         <h3> Activities </h3>
-
           <select onChange={handleFilterActivity} className={style.select}>
             {activityOptions.map((option) => (
               <option className={style.option} key={option.value} value={option.value}>
@@ -66,6 +68,12 @@ const CountryFilters = () => {
               </option>
             ))}
           </select>
+        </div>
+        <div >  
+          <h3 className={style.refresh}> Refresh Countries </h3>
+          <button  className={style.clearButton} onClick={handleFilterClear}>
+          Refresh Countries
+        </button>
         </div>
       </div>
     </>

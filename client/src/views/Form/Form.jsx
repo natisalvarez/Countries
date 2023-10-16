@@ -191,26 +191,18 @@ const Form = () => {
             </select>
             <span className={style.errorMessage}>{errors.countryId}</span>
           </div>
-
           <br />
-
           <div>
-            <button type="submit" value="Submit">
+            <button className="button" type="submit" value="Submit">
               Create activity
             </button>
           </div>
         </form>
-
         <br />
-
         <button>
           <NavLink to="/home">Back</NavLink>
         </button>
-
-
         <br />
-
-
       </div>
     </div>
   );

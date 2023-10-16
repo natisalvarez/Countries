@@ -1,17 +1,6 @@
 .container{
     justify-content: center;
-    padding: 10%;
-   
-}
-
-.clearButton{
-    display: flex;
-    text-align: left;
-    padding: 0.5%;
-    margin-top: 0px;
-    background-color: #70A762;
-    border-radius: 10%;
-    color: white;
+    padding: 3%;
 }
 
 .cards { /*este hay que modificar si se quieren mover las cards chicas*/

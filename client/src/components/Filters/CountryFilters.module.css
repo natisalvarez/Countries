@@ -9,11 +9,9 @@
 
   .select {
     padding: 10px;
-    border: none;
     border-radius: 5px;
-    background-color: #f2f2f2;
-    color: #333;
-    text-decoration: none;
+    background-color: #DF6E5A;;
+    color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-in-out;
   }
@@ -27,3 +25,19 @@
     font-size: 14px;
   }
   
+  .clearButton{
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    background-color: #DF6E5A;
+  }
+
+ .refresh{
+  color: white;
+ }
+
+.clearButton:hover {
+    transform: scale(1.1);
+ }
