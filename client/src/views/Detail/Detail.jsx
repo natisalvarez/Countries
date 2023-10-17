@@ -51,7 +51,7 @@ const Detail = () => {
           src= {preloadedLottie}
           className={style.backgroundIframe}
         ></iframe> */}
-        <Lottie map={map}/>
+        <Lottie map={map} className={style.backgroundIframe}/>
         <section className={style.img}>
           <div>
             {details?.types?.map((item) => (
