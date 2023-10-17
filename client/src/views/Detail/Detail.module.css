@@ -22,7 +22,7 @@
   left: 0;
   width: 100vw;
   height: 100vw;
-  z-index: -2000; /* para colocar el iframe detrás de otros elementos */
+  z-index: -2000; 
   opacity: 2; 
 }
 
