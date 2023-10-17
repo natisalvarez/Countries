@@ -11,17 +11,18 @@
     "homepage": "https://myusername.github.io/my-app"
   },
   "dependencies": {
+    "axios": "^1.4.0",
+    "lottie-react": "^2.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.1.1",
     "react-router-dom": "^6.14.1",
+    "react-scripts": "^5.0.1",
     "redux": "^4.2.1",
-    "thunk": "^0.0.1",
     "redux-thunk": "^2.4.2",
-    "axios": "^1.4.0",
-    "react-scripts": "^5.0.1"
+    "spinners-react": "^1.0.7",
+    "thunk": "^0.0.1"
   },
-
   "devDependencies": {
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
@@ -31,6 +32,5 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
     "vite": "^4.3.9"
-
   }
 }

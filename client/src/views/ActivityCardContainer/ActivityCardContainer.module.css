@@ -3,11 +3,19 @@
     /* border: black solid 10px; */
     display: flex;
     flex-flow: row wrap;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     padding: 20%;
     background-image: url('https://www.countryreports.org/new-index-assets/images/hp-container-one-map.png');
     background-size: cover;
+}
+
+.spinner{
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  height: 100vh;
 }
 /*
 .cards {

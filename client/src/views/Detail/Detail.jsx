@@ -1,13 +1,18 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useNavigate } from "react-router-dom";
 import { getCountryByDetail, cleanDetail } from "../../Redux/actions";
 import style from './Detail.module.css';
-
+import { SpinnerDotted } from 'spinners-react';
+import Lottie from 'lottie-react';
+import map from '../../assets/map.json';
+import { useRef } from "react";
 
 const Detail = () => {
+  const preloadedLottie = "https://lottie.host/?file=4cefb2ae-491f-42ef-8a75-7a4086f3300a/ho4qFKsZkX.json";
+  const animation = useRef;
   const back = useNavigate(); //Me permite volver para atrás sin montar todo el componente
-
+  const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   const { id } = useParams(); //lo que viene por URL
   const details = useSelector((state) => state.countryDetail);
@@ -21,14 +26,32 @@ const Detail = () => {
     }
   }, [dispatch, id]);
 
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 500);
+  }, []);
 
   return (
+    <div>
+    {loading ? (
+        <div className={style.spinner}>
+      <SpinnerDotted 
+        size={200}
+        thickness={100}
+        speed={100}
+        color="#DF6E5A"
+      />
+      </div>
+    ) : (
     <div className={style.detailWrapper}>
       <div className={style.containerDetail}>
-      <iframe
-          src="https://lottie.host/?file=4cefb2ae-491f-42ef-8a75-7a4086f3300a/ho4qFKsZkX.json"
+      {/* <iframe
+          src= {preloadedLottie}
           className={style.backgroundIframe}
-        ></iframe>
+        ></iframe> */}
+        <Lottie map={map}/>
         <section className={style.img}>
           <div>
             {details?.types?.map((item) => (
@@ -63,8 +86,10 @@ const Detail = () => {
       </div>
 
     </div>
-  );
-}
+  )}
+</div>
+)};
+
 
 export default Detail;
 

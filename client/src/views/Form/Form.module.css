@@ -9,6 +9,12 @@
   justify-content: center;
 }
 
+.spinner{
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  height: 100vh;
+}
 
 .formContainer {
   background-color: #A8CA65;

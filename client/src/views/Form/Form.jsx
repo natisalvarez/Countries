@@ -3,14 +3,19 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCountries, createActivity } from "../../Redux/actions";
 import style from "./Form.module.css";
 import { NavLink } from "react-router-dom";
-import axios from "axios";
-
+import { SpinnerDotted } from 'spinners-react';
 
 const Form = () => {
   const dispatch = useDispatch();
   const countries = useSelector((state) => state.Countries) || [];
+  const [loading, setLoading] = useState(false);
 
-  console.log(countries)
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 500);
+  }, []);
 
   useEffect(() => {
     //para que los paises esten disponibles antes de seleccionar una actividad
@@ -80,6 +85,17 @@ const Form = () => {
   };
 
   return (
+    <div>
+    {loading ? (
+        <div className={style.spinner}>
+      <SpinnerDotted 
+        size={200}
+        thickness={100}
+        speed={100}
+        color="#DF6E5A"
+      />
+      </div>
+    ) : (
     <div className={style.container}>
          <iframe
           src="https://lottie.host/?file=4cefb2ae-491f-42ef-8a75-7a4086f3300a/ho4qFKsZkX.json"
@@ -209,9 +225,9 @@ const Form = () => {
         <br />
       </div>
     </div>
-  );
-};
-
+  )};
+</div>
+)};
 
 export default Form;
 

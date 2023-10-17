@@ -7,11 +7,18 @@ import style from "./Home.module.css"
 import CountryOrder from '../../components/Filters/CountryOrder';
 import CountryFilters from '../../components/Filters/CountryFilters';
 import Pagination from "../../components/Pagination/Pagination";
-import SearchBar from '../../components/SearchBar/SearchBar';
-
+import { SpinnerDotted } from 'spinners-react';
 
 const Home = () => {
   const dispatch = useDispatch();
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 500);
+  }, []);
 
   useEffect(() => {
     dispatch(getCountries());
@@ -32,7 +39,17 @@ const Home = () => {
   };
 
   return (
-
+    <div>
+    {loading ? (
+        <div className={style.spinner}>
+      <SpinnerDotted 
+        size={200}
+        thickness={100}
+        speed={100}
+        color="#DF6E5A"
+      />
+      </div>
+    ) : (
     <div className={style.prueba1}>
       <div className={style.prueba}>
 
@@ -58,9 +75,9 @@ const Home = () => {
         </div>
       </div>
     </div>
-
-  );
-};
+    )}
+    </div>
+)};
 
 export default Home;
 
