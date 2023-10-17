@@ -10,7 +10,6 @@ const NavBar = () => {
   const dispatch = useDispatch();
   const [searchName, setSearchName] = useState("");
 
-
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch(getCountryByName(searchName));
@@ -19,7 +18,6 @@ const NavBar = () => {
   const handleChange = (event) => {
     setSearchName(event.target.value);
   };
-
 
   const location = useLocation();
 

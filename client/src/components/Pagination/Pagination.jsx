@@ -8,54 +8,77 @@ de elementos por página) y redondeando hacia arriba usando Math.ceil().
 
 const Pagination = ({ itemsPerPage, totalItems, currentPage, onPageChange }) => {
   const totalPages = Math.ceil(totalItems / itemsPerPage);
-  const isFirstPage = currentPage === 1;
-  const isLastPage = currentPage === totalPages;
 
-  // Si la pagina actual no es la primera, se tiene que renderizar al previous page
   const handlePrevPage = () => {
     if (currentPage > 1) {
       onPageChange(currentPage - 1);
     }
   };
 
-  //si la pagina total no es la primera y es mayor, se tiene que rendarizar el next
   const handleNextPage = () => {
     if (currentPage < totalPages) {
       onPageChange(currentPage + 1);
     }
   };
-  const handlePageClick = (page) => {
-    onPageChange(page);
+
+  const handleFirstPage = () => {
+    onPageChange(1);
   };
 
   const handleLastPage = () => {
     onPageChange(totalPages);
   };
-  
-  return (
-        <nav className={style.pagination}>
-          {currentPage > 1 && (
-            <>
-              <button className={style.previousButton} onClick={handlePrevPage}>
-                Prev
-              </button>
-              <button className={style.pageNumber} onClick={ handlePageClick}>
-               { currentPage}
-              </button>
-            </>
-          )}
-          {currentPage < totalPages && (
-            <>
-              <button  className={style.nextButton} onClick={handleNextPage}>
-                Next 
-              </button>
-            </>
-          )}
-        </nav>
-      );
-    };
 
-    export default Pagination;
+  return (
+    <nav className={style.pagination}>
+      <>
+        <button className={style.previousButton} onClick={handlePrevPage}>
+          Prev
+        </button>
+      </>
+      <button className={style.pageNumber} onClick={handleFirstPage}>
+        {currentPage}
+      </button>
+      {currentPage < totalPages && (
+        <>
+          <button className={style.nextButton} onClick={handleNextPage}>
+            Next
+          </button>
+        </>
+      )}
+    </nav>
+  );
+};
+
+export default Pagination;
+
+// // OPCION II
+
+// const Pagination = ({ itemsPerPage, totalItems, currentPage, onPageChange }) => {
+//   const totalPages = Math.ceil(totalItems / itemsPerPage);
+//   const isFirstPage = currentPage === 1;
+//   const isLastPage = currentPage === totalPages;
+
+//   // Si la pagina actual no es la primera, se tiene que renderizar al previous page
+//   const handlePrevPage = () => {
+//     if (currentPage > 1) {
+//       onPageChange(currentPage - 1);
+//     }
+//   };
+
+//   //si la pagina total no es la primera y es mayor, se tiene que rendarizar el next
+//   const handleNextPage = () => {
+//     if (currentPage < totalPages) {
+//       onPageChange(currentPage + 1);
+//     }
+//   };
+//   const handlePageClick = (page) => {
+//     onPageChange(page);
+//   };
+
+//   const handleLastPage = () => {
+//     onPageChange(totalPages);
+//   };
 
 // return (
 // <nav>

@@ -1,3 +1,4 @@
+
 .container {
   display: flex;
   flex-direction: row;
@@ -6,8 +7,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('https://lottie.host/?file=4ecf832b-3e14-4832-afd7-45a537ccdee3/lYRPhNMc8r.lottie');
-  background-size: cover;
 }
 
 
