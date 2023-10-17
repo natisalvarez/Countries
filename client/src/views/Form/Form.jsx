@@ -6,6 +6,7 @@ import { NavLink } from "react-router-dom";
 import { SpinnerDotted } from 'spinners-react';
 import Lottie from 'lottie-react';
 import map from '../../assets/map.json';
+import lottieLanding from '../../assets/lottieLanding.json';
 
 const Form = () => {
   const dispatch = useDispatch();

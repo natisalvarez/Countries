@@ -4,8 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { getCountryByDetail, cleanDetail } from "../../Redux/actions";
 import style from './Detail.module.css';
 import { SpinnerDotted } from 'spinners-react';
-import Lottie from 'lottie-react';
-import map from '../../assets/map.json';
+
 
 const Detail = () => {
   const back = useNavigate(); //Me permite volver para atrás sin montar todo el componente
@@ -44,7 +43,6 @@ const Detail = () => {
     ) : (
     <div className={style.detailWrapper}>
       <div className={style.containerDetail}>
-        <Lottie animationData={map} className={style.backgroundIframe}/>
         <section className={style.img}>
           <div>
             {details?.types?.map((item) => (

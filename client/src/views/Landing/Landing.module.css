@@ -4,18 +4,37 @@
     text-align: center;
     display: flex;
     justify-content: center;
-    background-image: url("https://i.ibb.co/thw6j3K/Enjoy-the-journey-around-the-world-1.png");
-    background-size: 100%;
+    /* 
     background-repeat: no-repeat;
     background-position: center center;
+    background-image: url("https://i.ibb.co/thw6j3K/Enjoy-the-journey-around-the-world-1.png");
+    background-size: 100%; 
     background-color: #70A762;
+    */
   }
+
+  .backgroundIframe {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2000; 
+    opacity: 2; 
+    background-color: #70A762;
+  } 
   
   .button {
-    border-radius: 1px;
+    border-radius: 20%;
     display: flex;
-    margin-top: 600px;
+    position:sticky;
+    flex-direction: row;
+    margin-top: 400%;
     color: white; 
+    background-color: #DF6E5A;
     font-size: 150%;
   }
   
+  .button:hover {
+    transform: scale(1.1);
+  }
