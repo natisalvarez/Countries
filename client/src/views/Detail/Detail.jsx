@@ -6,11 +6,8 @@ import style from './Detail.module.css';
 import { SpinnerDotted } from 'spinners-react';
 import Lottie from 'lottie-react';
 import map from '../../assets/map.json';
-import { useRef } from "react";
 
 const Detail = () => {
-  // const preloadedLottie = "https://lottie.host/?file=4cefb2ae-491f-42ef-8a75-7a4086f3300a/ho4qFKsZkX.json";
-  // const animation = useRef;
   const back = useNavigate(); //Me permite volver para atrás sin montar todo el componente
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
@@ -47,10 +44,6 @@ const Detail = () => {
     ) : (
     <div className={style.detailWrapper}>
       <div className={style.containerDetail}>
-      {/* <iframe
-          src= {preloadedLottie}
-          className={style.backgroundIframe}
-        ></iframe> */}
         <Lottie animationData={map} className={style.backgroundIframe}/>
         <section className={style.img}>
           <div>

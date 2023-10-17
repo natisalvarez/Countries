@@ -4,6 +4,8 @@ import { getCountries, createActivity } from "../../Redux/actions";
 import style from "./Form.module.css";
 import { NavLink } from "react-router-dom";
 import { SpinnerDotted } from 'spinners-react';
+import Lottie from 'lottie-react';
+import map from '../../assets/map.json';
 
 const Form = () => {
   const dispatch = useDispatch();
@@ -97,10 +99,11 @@ const Form = () => {
       </div>
     ) : (
     <div className={style.container}>
-         <iframe
+         {/* <iframe
           src="https://lottie.host/?file=4cefb2ae-491f-42ef-8a75-7a4086f3300a/ho4qFKsZkX.json"
           className={style.backgroundIframe}
-        ></iframe>
+        ></iframe> */}
+         <Lottie animationData={map} className={style.backgroundIframe}/>
       <div className={style.formContainer}>
         <h2> Please, post the activity that you can enjoy in each country! </h2>
         <br />
